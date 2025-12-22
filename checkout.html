@@ -249,7 +249,7 @@ let subtotal = 0;
 // ===============================
 // FETCH CART FROM MYSQL
 // ===============================
-fetch(`http://localhost:3000/api/cart/${user.id}`)
+fetch(`https://thebackendfile.onrender.com/api/cart/${user.id}`)
   .then(res => res.json())
   .then(data => {
     cart = data;
@@ -320,7 +320,7 @@ function placeOrder() {
     document.getElementById("city").value + " - " +
     document.getElementById("pincode").value;
 
-  fetch("http://localhost:3000/api/cart/checkout", {
+  fetch("https://thebackendfile.onrender.com/api/cart/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

@@ -161,7 +161,7 @@ function logout(){
   window.location.href = "login.html";
 }
 
-fetch("http://localhost:3000/api/admin/orders")
+fetch("https://thebackendfile.onrender.com/api/admin/orders")
   .then(res => res.json())
   .then(renderOrders)
   .catch(()=> {
@@ -220,7 +220,7 @@ function renderOrders(orders){
 function updateStatus(id){
   const status=document.getElementById(`status_${id}`).value;
 
-  fetch("http://localhost:3000/api/admin/orders/status",{
+  fetch("https://thebackendfile.onrender.com/api/admin/orders/status",{
     method:"PUT",
     headers:{ "Content-Type":"application/json" },
     body:JSON.stringify({ order_id:id, status })

@@ -79,7 +79,7 @@ button {
 const params = new URLSearchParams(window.location.search);
 const orderId = params.get("orderId");
 
-fetch(`http://localhost:3000/api/orders/invoice/${orderId}`)
+fetch(`https://thebackendfile.onrender.com/api/orders/invoice/${orderId}`)
   .then(res => res.json())
   .then(data => {
     const { order, items } = data;

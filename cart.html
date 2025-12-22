@@ -207,7 +207,7 @@ let cart = [];
 /* ===============================
    FETCH CART FROM MYSQL
    =============================== */
-fetch(`http://localhost:3000/api/cart/${currentUser.id}`)
+fetch(`https://thebackendfile.onrender.com/api/cart/${currentUser.id}`)
   .then(res => {
     if (!res.ok) throw new Error("Failed");
     return res.json();
@@ -290,7 +290,7 @@ function updateQty(cartItemId, delta, isCake) {
   // Just for debugging purposes
   console.log("Updating qty:", cartItemId, delta, isCake);
 
-  fetch("http://localhost:3000/api/cart/update", {
+  fetch("https://thebackendfile.onrender.com/api/cart/update", {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -310,7 +310,7 @@ function updateQty(cartItemId, delta, isCake) {
 function removeItem(cartItemId) {
   if (!confirm("Remove this item from cart?")) return;
 
-  fetch(`http://localhost:3000/api/cart/remove/${cartItemId}`, {
+  fetch(`https://thebackendfile.onrender.com/api/cart/remove/${cartItemId}`, {
     method: "DELETE"
   })
   .then(() => location.reload())

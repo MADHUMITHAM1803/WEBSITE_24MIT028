@@ -215,7 +215,7 @@ main {
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
 if (!user) window.location.href = "login.html";
 
-fetch(`http://localhost:3000/api/orders/${user.id}`)
+fetch(`https://thebackendfile.onrender.com/api/orders/${user.id}`)
   .then(res => res.json())
   .then(renderOrders);
 
@@ -261,7 +261,7 @@ function renderOrders(orders) {
 function cancelOrder(id) {
   if (!confirm("Cancel this order?")) return;
 
-  fetch(`http://localhost:3000/api/orders/cancel/${id}`, {
+  fetch(`https://thebackendfile.onrender.com/api/orders/cancel/${id}`, {
     method:"PUT"
   })
   .then(() => location.reload());
