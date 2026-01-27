@@ -915,7 +915,7 @@ function addToCartFromCard(item) {
     },
     body: JSON.stringify({
       user_id: user.id,
-      name: item.name,
+      product_name: item.name,
       price: item.price,
       quantity: 1,
       is_cake: item.weight.includes("kg") ? 1 : 0
